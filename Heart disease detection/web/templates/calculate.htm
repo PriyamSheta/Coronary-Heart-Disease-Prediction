@@ -1,0 +1,161 @@
+<html>
+    <head>
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>
+            Heart Disease Predictor
+        </title>
+		<style>
+		a:link, a:visited {
+  background-color: #DA6252;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+h2{text-align: center;}
+
+
+			body
+			{
+				font-family: 'Open Sans Condensed', sans-serif;
+				color: rgb(12, 66, 66);
+			}
+
+			.header 
+			{
+				padding: 20px;
+				text-align: center;
+				background: #DA6252;
+				color: white;
+				font-size: 30px;
+			}
+			form
+			{
+	   
+				width: 50%;
+				padding: 50px;
+				margin: auto;
+			}
+			input[type=number], select 
+			{
+				width: 100%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+	  
+			input[type=button] 
+			{
+				width : 100%;
+				text-align: center;
+				background-color:#DA6252;
+				color: white;
+				padding: 14px 20px;
+				margin: 8px 0;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+			}
+	  
+			input[type=button]:hover 
+			{
+				background-color: #DA6252;
+			}
+
+		</style>
+        
+    </head>
+    
+    <body>
+        <div class="header">
+			<h2>
+				Heart Disease Predictor 
+			</h2>
+        </div>
+		
+        <form action="{{url_for('predict')}}" method='post'>
+            <label for="Gender">Gender:</label><br>
+            <select id="Gender" name="Gender">
+      <option value="1">male </option>
+      <option value="0">Female</option>
+     </select>
+                       
+                       <label for="Age">Age:</label><br>
+            <input type="number" id="age" name="age"step="any" min="1" max="100"><br>
+
+            <label for="currentsm">Current Smoking?</label><br>
+            <select id="currentsm" name="currentsm">
+      <option value="0">no </option>
+      <option value="1">yes</option>
+     </select>
+            
+
+            <label for="cigsperday">Cigarete per Day:</label><br>
+            <input type="number" id="cigsperday" name="cigsperday"step="any" min="0" max="100"><br>
+
+            <label for="BpMeds">Blood pressure Medication?:</label><br>
+            <select id="BpMeds" name="BpMeds">
+      <option value="0">no </option>
+      <option value="1">yes</option>
+     </select>
+
+            <label for="PrevalentStroke">Prevalent Stroke?</label><br>
+            <select id="PrevalentStroke" name="PrevalentStroke">
+      <option value="0">no </option>
+      <option value="1">yes</option>
+     </select>
+
+
+            <label for="PrevalentHyp">Prevalent Hypertensive?</label><br>
+            <select id="PrevalentHyp" name="PrevalentHyp">
+      <option value="0">no </option>
+      <option value="1">yes</option>
+     </select>
+
+            <label for="Diabetes">Diabetes?</label><br>
+             <select id="DiabetesDiabetes" name="Diabetes">
+      <option value="0">no </option>
+      <option value="1">yes</option>
+     </select>
+
+            <label for="TopCol">Total Cholesterol</label><br>
+            <input type="number" id="TopCol" name="TopCol"><br>
+			
+			<label for="Sbp">Systolic blood pressure</label><br>
+            <input type="number" id="Sbp" name="Sbp"><br>
+			
+			<label for="Dbp">Diastolic blood pressure</label><br>
+            <input type="number" id="Dbp" name="Dbp"><br>
+			
+			<label for="BMI">BMI</label><br>
+            <input type="number" id="BMI" name="BMI">
+			<a class="nav-link" href="{{url_for('bmi')}}"> Find BMI</a><br><br>
+			
+			<label for="HRate">Heart Rate</label><br>
+            <input type="number" id="HRate" name="HRate"><br>
+			
+			<label for="Gluc">Glucose</label><br>
+            <input type="number" id="Gluc" name="Gluc"><br>
+        
+            
+        </br>
+           <button id="sub" class="btn btn-info"type="submit ">Predict</button> 
+		   
+        </form>
+        
+<br><br><h2>{{ prediction_text }}<h2>
+<br><br><h2>{{ risk_text }}<h2>
+        
+
+		
+    </body>
+
+</html>

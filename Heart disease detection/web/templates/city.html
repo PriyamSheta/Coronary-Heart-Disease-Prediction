@@ -1,0 +1,103 @@
+<html>
+    <head>
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>
+            Heart Disease Predictor
+        </title>
+		<style>
+		a:link, a:visited {
+  background-color: #DA6252;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+h2{text-align: center;}
+
+
+			body
+			{
+				font-family: 'Open Sans Condensed', sans-serif;
+				color: rgb(12, 66, 66);
+			}
+
+			.header 
+			{
+				padding: 20px;
+				text-align: center;
+				background: #DA6252;
+				color: white;
+				font-size: 30px;
+			}
+			form
+			{
+	   
+				width: 50%;
+				padding: 50px;
+				margin: auto;
+			}
+			input[type=number], select 
+			{
+				width: 100%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+	  
+			input[type=button] 
+			{
+				width : 100%;
+				text-align: center;
+				background-color:#DA6252;
+				color: white;
+				padding: 14px 20px;
+				margin: 8px 0;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+			}
+	  
+			input[type=button]:hover 
+			{
+				background-color: #DA6252;
+			}
+
+		</style>
+        
+    </head>
+    
+    <body>
+        <div class="header">
+			<h2>
+				Heart Disease Predictor 
+			</h2>
+        </div>
+		
+        <form action="{{url_for('doctors')}}" method='post'>
+            
+            </br><h1>You have a high risk of probability {{probability}}</h1>
+			</br><h2>Let us suggest you some doctors near to you.</h2>
+			<label for="city">Enter your city</label><br>
+            <input type="text" id="city" name="city"><br>
+        
+            
+        </br>
+           <button id="sub" class="btn btn-info"type="submit ">Submit</button> 
+		   
+        </form>
+        
+
+        
+
+		
+    </body>
+
+</html>
